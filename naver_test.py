@@ -60,5 +60,6 @@ for i in range(2,6):
     contents_dict[i]= contents.text # 태그를 제외한 텍스트만 value로 저장
     
 
+
 print(contents_dict)
 driver.quit()
