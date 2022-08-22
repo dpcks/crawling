@@ -32,12 +32,12 @@ driver.find_element(
 time.sleep(5)
 # driver.implicitly_wait(5)
 
-# 첫번쪠 동영상 틀기
+# 첫번째 동영상 클릭     
 driver.find_element(
     By.XPATH,
     '/html/body/ytd-app/div[1]/ytd-page-manager/ytd-search/div[1]/ytd-two-column-search-results-renderer/div/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-video-renderer[3]/div[1]/ytd-thumbnail/a'
 ).click()
-time.sleep(5)
+time.sleep(7)
 
 # 광고 스킵 클릭
 driver.find_element(
