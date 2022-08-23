@@ -23,12 +23,12 @@ driver.implicitly_wait(5)
 
 driver.find_element(
     By.CSS_SELECTOR,
-    '#main > div.area_category.category_type_notice.category_search_list > ul > li:nth-child(1) > a > div > p'
+    '#mArticle > div:nth-child(3)'
 ).click()
-for i in range(2,143):
+for i in range(2,50):
     driver.find_element(
         By.CSS_SELECTOR,
-        '#main > div.area_paging > a.link_page.link_next > span'
+        '#mArticle > div.area_paging > span > a.btn_next'
     ).click()
     driver.implicitly_wait(5)
     
