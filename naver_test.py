@@ -59,7 +59,9 @@ for i in range(2,6):
     contents = soup.select_one("._au_kin_collection") # 지식인 부분만
     contents_dict[i]= contents.text # 태그를 제외한 텍스트만 value로 저장
     
+# json 저장하기
+import json
+with open("contents.json","w",encoding="utf-8") as f:
+    json.dump(contents_dict,f,ensure_ascii=False,indent=4)
 
-   
-print(contents_dict)
 driver.quit()
