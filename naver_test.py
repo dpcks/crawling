@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 
 # 크롬 옵션 객체 생성
 options = webdriver.ChromeOptions()
+# options.add_argument("--headless") # 창 없이 실행하기
+# options.add_argument("user agent=Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36")
+options.add_argument("--start-fullscreen") # 전체화면
 
 # 크롬 브라우저 제어권 얻기
 driver = webdriver.Chrome(
@@ -37,6 +40,7 @@ driver.find_element(
     "#lnb > div.lnb_group > div > ul > li:nth-child(4)"
 ).click()
 time.sleep(5)
+driver.get_screenshot_as_file("naver_kin_page1.png")
 
 # 지식인 페이지의  텍스트만 가죠오기
 ## 드라이버 객체의 페이지 소스를 soup 객체로 변환
@@ -54,6 +58,8 @@ for i in range(2,6):
         '#main_pack > div.api_sc_page_wrap > div > a.btn_next'
     ).click()
     driver.implicitly_wait(5)
+    driver.get_screenshot_as_file(f"naver_kin_page{i}.png") # 스크린샷 찍기
+    
 
     soup = BeautifulSoup(driver.page_source,"html.parser")
     contents = soup.select_one("._au_kin_collection") # 지식인 부분만
